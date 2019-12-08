@@ -237,7 +237,8 @@ class EntityProcessor extends Processor<Entity> {
   @nonNull
   String _getConstructor(final List<Field> fields) {
     final columnNames = fields.map((field) => field.columnName).toList();
-    final constructorParameters = _classElement.constructors.first.parameters. where((f)=> columnNames.contains(f.name)).toList();
+    final constructorParameters = _classElement.constructors.first.parameters;
+        //.where((f)=> columnNames.contains(f.name)).toList();
 
     final parameterValues = <String>[];
 
